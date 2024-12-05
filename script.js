@@ -18,3 +18,9 @@ document.getElementById('todo-form').addEventListener('submit', function (e) {
   
     const text = document.createElement('span');
     text.textContent = task;
+
+    const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.addEventListener('change', () => {
+    text.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
+  });
