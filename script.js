@@ -24,3 +24,11 @@ document.getElementById('todo-form').addEventListener('submit', function (e) {
   checkbox.addEventListener('change', () => {
     text.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
   });
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.addEventListener('click', () => listItem.remove());
+
+  listItem.append(checkbox, text, deleteBtn);
+  list.appendChild(listItem);
+}
